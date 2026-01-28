@@ -1,76 +1,4 @@
-### 1️⃣ The Scripts (Create these in the root folder)
-
-This script will be creating the virtual environment, installing Python dependencies, and installing Node modules.
-
-**Option A: For Windows (`setup.bat`)**
-Create a file named `setup.bat` in the root:
-```batch
-@echo off
-echo ==========================================
-echo 🚀 DATE CALCULATOR APP - ONE-CLICK SETUP
-echo ==========================================
-
-echo.
-echo [1/4] Setting up Backend Virtual Environment...
-cd backend
-python -m venv venv
-call venv\Scripts\activate
-
-echo.
-echo [2/4] Installing Backend Dependencies...
-pip install -r requirements\dev.txt
-
-echo.
-echo [3/4] Installing Frontend Dependencies (pnpm)...
-cd ..\frontend
-call pnpm install
-
-echo.
-echo ==========================================
-echo ✅ SETUP COMPLETE!
-echo ==========================================
-echo.
-echo To run the app:
-echo 1. Open Terminal 1 (Backend): cd backend, activate venv, run uvicorn
-echo 2. Open Terminal 2 (Frontend): cd frontend, run pnpm dev
-echo.
-echo (See README.md for exact commands)
-pause
-```
-
-**Option B: For Mac / Linux (`setup.sh`)**
-Create a file named `setup.sh` in the root:
-```bash
-#!/bin/bash
-echo "=========================================="
-echo "🚀 DATE CALCULATOR APP - ONE-CLICK SETUP"
-echo "=========================================="
-
-echo ""
-echo "[1/4] Setting up Backend Virtual Environment..."
-cd backend
-python3 -m venv venv
-source venv/bin/activate
-
-echo ""
-echo "[2/4] Installing Backend Dependencies..."
-pip install -r requirements/dev.txt
-
-echo ""
-echo "[3/4] Installing Frontend Dependencies (pnpm)..."
-cd ../frontend
-pnpm install
-
-echo ""
-echo "=========================================="
-echo "✅ SETUP COMPLETE!"
-echo "=========================================="
-```
-*(Run `chmod +x setup.sh` to make it executable)*
-
----
-
-```markdown
+markdown
 # 📅 Date Calculator App (Monorepo)
 
 A professional full-stack application designed to perform high-performance date calculations.
@@ -78,8 +6,8 @@ It features a **FastAPI** backend with in-memory caching and SQLite logging, pai
 
 ### 🌟 Features
 *   **Saturday Counter:** Calculates the number of Saturdays falling on the 15th of the month between two dates.
-*   **Weekday Calculator:** Instantly determines the weekday for any given date.
-*   **Performance:** Uses `fastapi-cache` to store calculation results.
+*   **Date Pattern Finder:** Finds specific weekdays and days of the month within a year range.
+*   **Performance:** Uses `fastapi-cache` to store calculation results (In-Memory).
 *   **Logging:** Asynchronous SQLite logging for all API requests.
 *   **Security:** Rate limiting and Input Validation enabled.
 
@@ -87,7 +15,7 @@ It features a **FastAPI** backend with in-memory caching and SQLite logging, pai
 
 ## ⚡ Quick Start (The Easy Way)
 
-We have provided a script to automate the installation of all Python and Node.js dependencies.
+We have provided scripts to automate the installation and running of the project.
 
 ### Prerequisites
 *   **Python 3.10+**
@@ -95,6 +23,8 @@ We have provided a script to automate the installation of all Python and Node.js
 *   **pnpm** (Install via `npm install -g pnpm`)
 
 ### 1. Run the Setup Script
+This installs the virtual environment and all dependencies for both Backend and Frontend.
+
 **Windows:**
 Double-click `setup.bat` or run:
 ```cmd
@@ -107,16 +37,21 @@ Double-click `setup.bat` or run:
 ```
 
 ### 2. Start the Servers
+
+**Option A: Windows (One-Click)**
+Double-click `start.bat` or run:
+```cmd
+.\start.bat
+```
+*This will automatically open two terminal windows: one for the Backend and one for the Frontend.*
+
+**Option B: Mac / Linux (Manual)**
 You need two terminal windows running simultaneously.
 
 **Terminal 1: The Backend**
 ```bash
 cd backend
-# Activate venv (Windows: venv\Scripts\activate | Mac/Linux: source venv/bin/activate)
-# Run Server:
-# Windows:
-set PYTHONPATH=src && uvicorn app.main:app --reload
-# Mac/Linux:
+source venv/bin/activate
 PYTHONPATH=src uvicorn app.main:app --reload
 ```
 
@@ -182,7 +117,8 @@ This project is a **Monorepo**.
 
 ```text
 date-calculator-app/
-├── setup.bat / setup.sh       # One-click installation scripts
+├── setup.bat / setup.sh       # Installation scripts
+├── start.bat                  # Windows launch script
 ├── backend/                   # 🐍 Python / FastAPI
 │   ├── src/
 │   │   ├── app/
