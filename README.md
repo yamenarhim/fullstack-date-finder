@@ -3,7 +3,6 @@ A full-stack application designed to perform high-performance date calculations.
 It features a **FastAPI** backend with in-memory caching and SQLite logging, paired with a modern **Vue 3** frontend.
 
 ### 🌟 Features
-*   **Saturday Counter:** Calculates the number of Saturdays falling on the 15th of the month between two dates.
 *   **Date Pattern Finder:** Finds specific weekdays and days of the month within a year range.
 *   **Performance:** Uses `fastapi-cache` to store calculation results (In-Memory).
 *   **Logging:** Asynchronous SQLite logging for all API requests.
