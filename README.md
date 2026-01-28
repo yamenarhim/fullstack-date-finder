@@ -1,8 +1,6 @@
-Here is the complete package. I have created **setup scripts** for you to add to the root folder, and a **comprehensive README** that references them.
-
 ### 1️⃣ The Scripts (Create these in the root folder)
 
-These scripts handle the boring work: creating the virtual environment, installing Python dependencies, and installing Node modules.
+This script will be creating the virtual environment, installing Python dependencies, and installing Node modules.
 
 **Option A: For Windows (`setup.bat`)**
 Create a file named `setup.bat` in the root:
@@ -71,10 +69,6 @@ echo "=========================================="
 *(Run `chmod +x setup.sh` to make it executable)*
 
 ---
-
-### 2️⃣ The README.md
-
-Copy this exactly into your `README.md`.
 
 ```markdown
 # 📅 Date Calculator App (Monorepo)
