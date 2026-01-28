@@ -1,7 +1,5 @@
-markdown
-# 📅 Date Calculator App (Monorepo)
-
-A professional full-stack application designed to perform high-performance date calculations.
+# 📅 Date Calculator App 
+A full-stack application designed to perform high-performance date calculations.
 It features a **FastAPI** backend with in-memory caching and SQLite logging, paired with a modern **Vue 3** frontend.
 
 ### 🌟 Features
